@@ -1,7 +1,9 @@
-// The purpose of this code is to ensure that the "updateTask" function is called once the document is ready, allowing it to perform any necessary tasks related to task updates or initialization.
+// variable declaration
+const localFavList = "favMovieList";
+
+// The purpose of this event listener is to ensure that the "updateTask" function is called once the document is ready, allowing it to perform any necessary tasks related to task updates.
 document.addEventListener("DOMContentLoaded", updateTask);
 
-const localFavList = "favMovieList";
 
 //Initilize the localStorage Favroite list
 if (!localStorage.getItem(localFavList)) {
@@ -15,7 +17,7 @@ function updateTask() {
     favCounter.innerText = db.length;
 }
 
-//Fatch the movie details from API as JSON.
+//Fetch the movie details from API as JSON.
 const fetchMovies = async (url, value) => {
     const response = await fetch(`${url}${value}`);
     const movies = await response.json();
@@ -28,7 +30,7 @@ function isFav(list, id) {
 }
 
 
-// This function adds or removes a movie from the favorite list in local storage. It takes an movie object and a window parameter which is responsible to re-rendering of calling function.
+// This function adds or removes a movie from the favorite list in local storage. It takes a movie object and a window parameter which is responsible to re-rendering of calling function.
 function addRemoveToFavList(obj, window) {
     event.stopPropagation();
     let db = JSON.parse(localStorage.getItem(localFavList));
@@ -80,11 +82,10 @@ async function showMovieList() {
         }
     }
     html += '</div>'
-    console.log(html);
     document.getElementById('main').innerHTML = html;
 }
 
-//It Parse the movies from local Storage and render all as cards.
+//It Parse the movies from favorite movie list from local Storage and render all as cards.
 async function showFavMovieList() {
     let favList = JSON.parse(localStorage.getItem(localFavList));
     let html = '<div id="movie-container" class="card-group">';
@@ -108,7 +109,7 @@ async function showFavMovieList() {
     document.getElementById('main').innerHTML = html;
 }
 
-//It fatchs the perticular movie with itemID from API and render all the details.
+//It fetchs the perticular movie with itemID from API and render all the details.
 async function showMovieDetails(itemId) {
     const list = JSON.parse(localStorage.getItem(localFavList));
     const url = "https://www.omdbapi.com/?apikey=7b6b319d&i=";
