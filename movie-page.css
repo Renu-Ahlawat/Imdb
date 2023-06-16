@@ -1,0 +1,49 @@
+body {
+    background-image: url("images/bodyback.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-attachment: fixed;
+}
+
+#movie-details-container {
+    margin: 60px;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    color: aliceblue;
+}
+
+#movie-subdetails {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    color: gray;
+}
+#movie-subdetails span{
+    margin-right: 8px;
+}
+
+#imdb-rating {
+    color: rgba(245, 197, 24, 1);
+}
+
+#movie-plot {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.extra-details-title {
+    color: white;
+}
+
+.extra-details-value {
+    color: rgba(31, 78, 206, 0.822);
+}
+
+.page-card-title {
+    color: rgb(215, 163, 115);
+    font-size: xx-large;
+    font-weight: bold;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB Clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="movie-page.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <h2>IMDB</h2>
+            </a>
+            <div class="flot d-flex">
+                <!-- Search Bar  -->
+                <form class="d-flex" role="search" oninput="showMovieList(event)">
+                    <input id="search-input" class="form-control me-0" type="search" placeholder="Search"
+                        aria-label="Search">
+                </form>
+                <!-- Favourite Heart Icon -->
+                <a class="navbar-brand ms-4" href="#">
+                    <span style="color: red; font-size: 30px; position: relative;" onclick="showFavMovieList()">&#x2764;</span>
+                    <span id="like-counter">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Body -->
+    <main id="main" role="main">
+        <div class="head-container">
+            <h2 class="text-center text-white ">Discover and explore the world of movies with our comprehensive movie
+                details search engine.</h2>
+        </div>
+    </main>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+
+</html>
